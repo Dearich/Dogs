@@ -58,5 +58,6 @@ extension SubBreedViewController: UITableViewDataSource, UITableViewDelegate {
             imageViewController.presenter.dogForSave = dogForSave
             self?.navigationController?.pushViewController(imageViewController, animated: true)
         }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

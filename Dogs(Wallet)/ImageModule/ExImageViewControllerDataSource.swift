@@ -23,6 +23,33 @@ extension ImageViewController: UICollectionViewDataSource, UICollectionViewDeleg
         guard let urlImageString  = presenter.dogForSave?[indexPath.row].urls else { return cell }
         guard let url = URL(string: urlImageString) else { return cell }
         presenter.getImage(spiner: spiner, url: url, cellImage: cell.imageView)
+        
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard let willDisplayDog = presenter.dogForSave?[indexPath.row] else { return }
+        if  willDisplayDog.like {
+            print("YES")
+            likeButton.isSelected = true
+        } else {
+            print("NO")
+            likeButton.isSelected = false
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        for cell in collectionView.visibleCells {
+            guard let indexPath = collectionView.indexPath(for: cell) else { return }
+            print(indexPath)
+            guard let willDisplayDog = presenter.dogForSave?[indexPath.row] else { return }
+            if  willDisplayDog.like {
+                print("YES")
+                likeButton.isSelected = true
+            } else {
+                print("NO")
+                likeButton.isSelected = false
+            }
+        }
     }
 }

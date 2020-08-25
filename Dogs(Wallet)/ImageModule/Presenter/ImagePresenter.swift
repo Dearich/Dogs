@@ -13,7 +13,7 @@ class ImagePresenter {
     weak var view: ImageViewController?
     
     var dogForSave: [DogForSaveModel]?
-    var imageToShare = UIImage()
+    var imageToShare: UIImage?
     
     required init(view:ImageViewController) {
         self.view = view

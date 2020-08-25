@@ -22,11 +22,20 @@ class CoreDataStack {
         })
         return container
     }()
+    lazy var favouritesDogsPersistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "FavouritesDogs")
+        container.loadPersistentStores(completionHandler: { (_, error) in
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        })
+        return container
+    }()
     
     // MARK: - Core Data Saving support
     
-    func saveContext () {
-        let context = allDogsPersistentContainer.viewContext
+    func saveContext (container: NSPersistentContainer) {
+        let context = container.viewContext
         if context.hasChanges {
             do {
                 try context.save()
@@ -51,7 +60,7 @@ class CoreDataStack {
                     dog.addToRelationship(subbreed)
                 }
             }
-            saveContext()
+            saveContext(container: allDogsPersistentContainer)
         }
         
     }
@@ -66,6 +75,15 @@ class CoreDataStack {
             print(error.localizedDescription)
         }
         return [Dog]()
+    }
+    
+    func saveFavouritesDogs(favouriteDog: DogForSaveModel) {
+        let managedContext = favouritesDogsPersistentContainer.viewContext
+        let favouriteDogForSave = FavouritesDog(context: managedContext)
+        favouriteDogForSave.name = favouriteDog.name
+        favouriteDogForSave.like = favouriteDog.like
+        favouriteDogForSave.url = favouriteDog.urls
+        saveContext(container: favouritesDogsPersistentContainer)
     }
     
 //    func updateStatus(task: Task, value: Bool) {

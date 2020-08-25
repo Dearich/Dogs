@@ -27,7 +27,7 @@ class ImageViewController: UIViewController {
         collectionView.decelerationRate = UIScrollView.DecelerationRate.fast
         
         let availableWidth = collectionView.bounds.inset(by: collectionView.layoutMargins).width
-        let availableHight = collectionView.bounds.inset(by: collectionView.layoutMargins).height * 0.89
+        let availableHight = collectionView.bounds.inset(by: collectionView.layoutMargins).height * 0.65
         centeredCollectionViewFlowLayout.itemSize = CGSize(width: availableWidth, height: availableHight )
     }
     
@@ -38,6 +38,11 @@ class ImageViewController: UIViewController {
         self.navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(share)), animated: true)
         
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        //TODO
+        print(presenter.dogForSave)
+    }
     
     @objc func share() {
         presenter.share()
@@ -45,15 +50,20 @@ class ImageViewController: UIViewController {
 
     @IBAction func likeButton(_ sender: UIButton) {
     
-        for cell in collectionView.visibleCells {
-            let indexPath = collectionView.indexPath(for: cell)
-        }
         if sender.isSelected {
             print("Not Liked")
              sender.isSelected = false
+            for cell in collectionView.visibleCells {
+                guard let indexPath = collectionView.indexPath(for: cell) else { return }
+                presenter.dogForSave?[indexPath.row].like = false
+            }
         } else {
             print("Like")
             sender.isSelected = true
+            for cell in collectionView.visibleCells {
+                guard let indexPath = collectionView.indexPath(for: cell) else { return }
+                presenter.dogForSave?[indexPath.row].like = true
+            }
         }
     }
 }

@@ -14,15 +14,20 @@ class StartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         spinner.startAnimating()
-        getDogs()
+        if CheckInternetConnection.connection() {
+            getDogs()
+        } else {
+            setAlert(title: "Bad connection!", message: "Check your internet connection.")
+        }
     }
     
     private func getDogs() {
         
         let networkService = NetworkService()
-        networkService.getDogsInfo {(dogsModel, error) in
+        networkService.getDogsInfo { [weak self] (dogsModel, error) in
             if let error = error {
                 print(error.localizedDescription)
+                self?.setAlert(title: "Some server error", message: "Try connect later")
             } else {
                 guard let dogs = dogsModel?.message else { return }
                 DispatchQueue.main.async {
@@ -37,5 +42,16 @@ class StartViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    private func setAlert(title: String, message: String) {
+        
+        let alert = UIAlertController(title:title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .default) {[weak self] (_) in
+            self?.getDogs()
+        }
+        alert.addAction(action)
+        self.present(alert, animated: true)
+        
     }
 }

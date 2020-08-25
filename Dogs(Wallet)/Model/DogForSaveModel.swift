@@ -11,5 +11,5 @@ import Foundation
 struct DogForSaveModel {
     let name: String
     let urls: String
-    let like:Bool
+    var like:Bool
 }
