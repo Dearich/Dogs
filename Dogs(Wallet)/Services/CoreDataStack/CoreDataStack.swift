@@ -78,12 +78,32 @@ class CoreDataStack {
     }
     
     func saveFavouritesDogs(favouriteDog: DogForSaveModel) {
+        let savedDogs = fetchFavouritesDog()
+        for dog in savedDogs {
+            guard let savedUrl = dog.url else { return }
+            if savedUrl == favouriteDog.urls {
+                print("Already saved")
+                return
+            }
+        }
         let managedContext = favouritesDogsPersistentContainer.viewContext
         let favouriteDogForSave = FavouritesDog(context: managedContext)
         favouriteDogForSave.name = favouriteDog.name
         favouriteDogForSave.like = favouriteDog.like
         favouriteDogForSave.url = favouriteDog.urls
         saveContext(container: favouritesDogsPersistentContainer)
+    }
+    
+    func fetchFavouritesDog() -> [FavouritesDog] {
+        let managedContext = favouritesDogsPersistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<FavouritesDog>(entityName: "FavouritesDog")
+        do {
+            let dogs = try managedContext.fetch(fetchRequest)
+            return dogs
+        } catch let error {
+            print(error.localizedDescription)
+        }
+        return [FavouritesDog]()
     }
     
 //    func updateStatus(task: Task, value: Bool) {

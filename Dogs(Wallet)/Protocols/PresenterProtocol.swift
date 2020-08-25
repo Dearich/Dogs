@@ -15,6 +15,9 @@ protocol PresenterProtocol: class {
 extension PresenterProtocol {
     func getAllDogs() -> [Dog] {
         let dogs = CoreDataStack.shared.fetchLists()
-        return dogs
+        return dogs.sorted { (first, second) -> Bool in
+            let bool = first.breed! < second.breed!
+            return bool
+        }
     }
 }

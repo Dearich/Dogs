@@ -26,14 +26,12 @@ extension ImageViewController: UICollectionViewDataSource, UICollectionViewDeleg
         
         return cell
     }
-    
+    //update like button position
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         guard let willDisplayDog = presenter.dogForSave?[indexPath.row] else { return }
         if  willDisplayDog.like {
-            print("YES")
             likeButton.isSelected = true
         } else {
-            print("NO")
             likeButton.isSelected = false
         }
     }
@@ -41,13 +39,10 @@ extension ImageViewController: UICollectionViewDataSource, UICollectionViewDeleg
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         for cell in collectionView.visibleCells {
             guard let indexPath = collectionView.indexPath(for: cell) else { return }
-            print(indexPath)
             guard let willDisplayDog = presenter.dogForSave?[indexPath.row] else { return }
             if  willDisplayDog.like {
-                print("YES")
                 likeButton.isSelected = true
             } else {
-                print("NO")
                 likeButton.isSelected = false
             }
         }

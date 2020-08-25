@@ -39,7 +39,10 @@ extension MainViewController:  UITableViewDelegate, UITableViewDataSource {
         guard let dogs = dogsModel else { return }
         if let subbreeds = dogs[indexPath.row].relationship?.allObjects as? [Subbreed], !subbreeds.isEmpty {
             let subbreedViewController =  ModuleBuilder.createSubBreedViewController()
-            subbreedViewController.subbreeds = subbreeds
+            subbreedViewController.subbreeds = subbreeds.sorted(by: { (first, second) -> Bool in
+                let bool = first.name! < second.name!
+                return bool
+            })
             navigationController?.pushViewController(subbreedViewController, animated: true)
         } else {
             guard let presenter = presenter as? MainPresenter, let breed = dogs[indexPath.row].breed else {print("Error"); return }

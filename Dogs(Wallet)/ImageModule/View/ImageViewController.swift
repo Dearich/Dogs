@@ -40,8 +40,12 @@ class ImageViewController: UIViewController {
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        //TODO
-        print(presenter.dogForSave)
+        guard let dogForSave = presenter.dogForSave else { return }
+        for favouritesDog in dogForSave {
+            if favouritesDog.like {
+                CoreDataStack.shared.saveFavouritesDogs(favouriteDog: favouritesDog)
+            }
+        }
     }
     
     @objc func share() {
