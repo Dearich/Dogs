@@ -12,16 +12,20 @@ class Router: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         UINavigationBar.appearance().prefersLargeTitles = false
-        let listVC = generateNavController(viewControler: ModuleBuilder.createMain(), title: "Dogs", tabBarTitle: "List")
+        let listVC = generateNavController(viewControler: ModuleBuilder.createMain(), title: "Dogs", tabBarTitle: "List", imageName: "doc.plaintext")
         let favouritesVC = generateNavController(viewControler: ModuleBuilder.createFavouritesModule(),
-                                                 title: "Favourites", tabBarTitle: "Favourites")
+                                                 title: "Favourites", tabBarTitle: "Favourites", imageName: "heart")
         viewControllers = [listVC, favouritesVC]
         
     }
-    fileprivate func generateNavController(viewControler: UIViewController, title: String, tabBarTitle: String) -> UINavigationController {
+    fileprivate func generateNavController(viewControler: UIViewController,
+                                           title: String,
+                                           tabBarTitle: String,
+                                           imageName: String) -> UINavigationController {
         let navController = UINavigationController(rootViewController: viewControler)
         viewControler.navigationItem.title = title
-        navController.title = tabBarTitle
+        viewControler.tabBarItem.image = UIImage(systemName: imageName)
+        viewControler.tabBarItem.title = tabBarTitle
         return navController
     }
 }

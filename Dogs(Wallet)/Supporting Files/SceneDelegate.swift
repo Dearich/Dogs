@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window?.rootViewController = StartViewController()
             window?.makeKeyAndVisible()
             UserDefaults.standard.set(true, forKey: "firstStart")
-        }else {
+        } else {
             window?.rootViewController = Router()
             window?.makeKeyAndVisible()
         }

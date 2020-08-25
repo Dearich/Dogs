@@ -10,5 +10,11 @@ import Foundation
 
 protocol PresenterProtocol: class {
     init(view: ViewProtocol)
-//    var view: ViewProtocol? { get }
+    func getAllDogs() -> [Dog]
+}
+extension PresenterProtocol {
+    func getAllDogs() -> [Dog] {
+        let dogs = CoreDataStack.shared.fetchLists()
+        return dogs
+    }
 }

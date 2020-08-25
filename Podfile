@@ -7,6 +7,7 @@ target 'Dogs(Wallet)' do
 
   # Pods for Dogs(Wallet)
 pod 'Alamofire', '~> 5.2'
+pod "CenteredCollectionView"
 
   target 'Dogs(Wallet)Tests' do
     inherit! :search_paths

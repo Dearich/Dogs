@@ -30,14 +30,25 @@
 		1574D45024F3A865006F1D66 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1574D44F24F3A865006F1D66 /* MainTableViewCell.swift */; };
 		1574D45424F3B3A4006F1D66 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1574D45324F3B3A4006F1D66 /* CoreDataStack.swift */; };
 		1574D45724F3B8A7006F1D66 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1574D45624F3B8A7006F1D66 /* NetworkService.swift */; };
-		1574D45A24F3BDBE006F1D66 /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1574D45924F3BDBE006F1D66 /* JSONHelper.swift */; };
-		1574D45F24F3D98E006F1D66 /* SubBreedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1574D45E24F3D98E006F1D66 /* SubBreedPresenter.swift */; };
 		1574D46224F3D9DE006F1D66 /* SubBreedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1574D46024F3D9DE006F1D66 /* SubBreedViewController.swift */; };
 		1574D46324F3D9DE006F1D66 /* SubBreedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1574D46124F3D9DE006F1D66 /* SubBreedViewController.xib */; };
 		1574D46924F3E781006F1D66 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1574D46724F3E781006F1D66 /* SpinnerViewController.swift */; };
 		1574D46A24F3E781006F1D66 /* SpinnerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1574D46824F3E781006F1D66 /* SpinnerViewController.xib */; };
 		15D6AA5024F466230042DFFA /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D6AA4E24F466230042DFFA /* StartViewController.swift */; };
 		15D6AA5124F466230042DFFA /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15D6AA4F24F466230042DFFA /* StartViewController.xib */; };
+		15F101F324F4F8E300FAC9B5 /* RootViewControllerAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F101F224F4F8E300FAC9B5 /* RootViewControllerAnimation.swift */; };
+		15F101F624F5068B00FAC9B5 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F101F524F5068B00FAC9B5 /* ImageService.swift */; };
+		15F101FB24F5071000FAC9B5 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F101F924F5071000FAC9B5 /* ImageViewController.swift */; };
+		15F101FC24F5071000FAC9B5 /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15F101FA24F5071000FAC9B5 /* ImageViewController.xib */; };
+		15F1020024F50B4300FAC9B5 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F101FE24F50B4300FAC9B5 /* ImageCollectionViewCell.swift */; };
+		15F1020124F50B4300FAC9B5 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15F101FF24F50B4300FAC9B5 /* ImageCollectionViewCell.xib */; };
+		15F1020424F514A600FAC9B5 /* ImagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F1020324F514A600FAC9B5 /* ImagePresenter.swift */; };
+		15F1020624F5184100FAC9B5 /* ImageURLsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F1020524F5184100FAC9B5 /* ImageURLsModel.swift */; };
+		15F1020824F5222900FAC9B5 /* SubBreedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F1020724F5222900FAC9B5 /* SubBreedPresenter.swift */; };
+		15F1020A24F5371700FAC9B5 /* ExImageViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F1020924F5371700FAC9B5 /* ExImageViewControllerDataSource.swift */; };
+		15F1020C24F53B3E00FAC9B5 /* CheckInternetConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F1020B24F53B3E00FAC9B5 /* CheckInternetConnection.swift */; };
+		15F1020F24F5437B00FAC9B5 /* FavouritesDogs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 15F1020D24F5437B00FAC9B5 /* FavouritesDogs.xcdatamodeld */; };
+		15F1021124F54F1100FAC9B5 /* DogForSaveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F1021024F54F1100FAC9B5 /* DogForSaveModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,14 +87,25 @@
 		1574D44F24F3A865006F1D66 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		1574D45324F3B3A4006F1D66 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		1574D45624F3B8A7006F1D66 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		1574D45924F3BDBE006F1D66 /* JSONHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONHelper.swift; sourceTree = "<group>"; };
-		1574D45E24F3D98E006F1D66 /* SubBreedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubBreedPresenter.swift; sourceTree = "<group>"; };
 		1574D46024F3D9DE006F1D66 /* SubBreedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubBreedViewController.swift; sourceTree = "<group>"; };
 		1574D46124F3D9DE006F1D66 /* SubBreedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubBreedViewController.xib; sourceTree = "<group>"; };
 		1574D46724F3E781006F1D66 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		1574D46824F3E781006F1D66 /* SpinnerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpinnerViewController.xib; sourceTree = "<group>"; };
 		15D6AA4E24F466230042DFFA /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		15D6AA4F24F466230042DFFA /* StartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
+		15F101F224F4F8E300FAC9B5 /* RootViewControllerAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewControllerAnimation.swift; sourceTree = "<group>"; };
+		15F101F524F5068B00FAC9B5 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		15F101F924F5071000FAC9B5 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		15F101FA24F5071000FAC9B5 /* ImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageViewController.xib; sourceTree = "<group>"; };
+		15F101FE24F50B4300FAC9B5 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		15F101FF24F50B4300FAC9B5 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		15F1020324F514A600FAC9B5 /* ImagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePresenter.swift; sourceTree = "<group>"; };
+		15F1020524F5184100FAC9B5 /* ImageURLsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURLsModel.swift; sourceTree = "<group>"; };
+		15F1020724F5222900FAC9B5 /* SubBreedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubBreedPresenter.swift; sourceTree = "<group>"; };
+		15F1020924F5371700FAC9B5 /* ExImageViewControllerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExImageViewControllerDataSource.swift; sourceTree = "<group>"; };
+		15F1020B24F53B3E00FAC9B5 /* CheckInternetConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInternetConnection.swift; sourceTree = "<group>"; };
+		15F1020E24F5437B00FAC9B5 /* FavouritesDogs.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavouritesDogs.xcdatamodel; sourceTree = "<group>"; };
+		15F1021024F54F1100FAC9B5 /* DogForSaveModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogForSaveModel.swift; sourceTree = "<group>"; };
 		9FDF2C99F47C490E41B3B29E /* Pods-Dogs(Wallet)Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dogs(Wallet)Tests.debug.xcconfig"; path = "Target Support Files/Pods-Dogs(Wallet)Tests/Pods-Dogs(Wallet)Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		A81FF728094BEF1CB4C7AAE4 /* Pods-Dogs(Wallet).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dogs(Wallet).release.xcconfig"; path = "Target Support Files/Pods-Dogs(Wallet)/Pods-Dogs(Wallet).release.xcconfig"; sourceTree = "<group>"; };
 		BA3C73F856636F79CA88FB26 /* Pods-Dogs(Wallet)Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dogs(Wallet)Tests.release.xcconfig"; path = "Target Support Files/Pods-Dogs(Wallet)Tests/Pods-Dogs(Wallet)Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -135,13 +157,14 @@
 		1574D40624F3964D006F1D66 /* Dogs(Wallet) */ = {
 			isa = PBXGroup;
 			children = (
-				15D6AA4C24F465ED0042DFFA /* StartingModule */,
 				1574D42D24F397E8006F1D66 /* Module Builder.swift */,
 				1574D43024F39989006F1D66 /* Router.swift */,
 				1574D44A24F3A301006F1D66 /* Model */,
-				1574D45B24F3D956006F1D66 /* SubBreedModule */,
+				15D6AA4C24F465ED0042DFFA /* StartingModule */,
 				1574D42F24F398B1006F1D66 /* MainModule */,
+				1574D45B24F3D956006F1D66 /* SubBreedModule */,
 				1574D43224F39AC3006F1D66 /* FavouritesModule */,
+				15F101F724F506D500FAC9B5 /* ImageModule */,
 				1574D44424F39D0F006F1D66 /* Protocols */,
 				1574D45124F3B386006F1D66 /* Services */,
 				1574D42C24F3973D006F1D66 /* Supporting Files */,
@@ -167,6 +190,7 @@
 				1574D41524F39650006F1D66 /* LaunchScreen.storyboard */,
 				1574D41824F39650006F1D66 /* Info.plist */,
 				1574D41024F3964D006F1D66 /* Dogs_Wallet_.xcdatamodeld */,
+				15F1020D24F5437B00FAC9B5 /* FavouritesDogs.xcdatamodeld */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -238,6 +262,8 @@
 			isa = PBXGroup;
 			children = (
 				1574D44B24F3A32B006F1D66 /* DogsModel.swift */,
+				15F1020524F5184100FAC9B5 /* ImageURLsModel.swift */,
+				15F1021024F54F1100FAC9B5 /* DogForSaveModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -246,7 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				1574D46424F3E48C006F1D66 /* Addition */,
-				1574D45824F3BD9E006F1D66 /* JSONHelper */,
+				15F101F424F5067A00FAC9B5 /* ImageService */,
 				1574D45524F3B85F006F1D66 /* NetworkService */,
 				1574D45224F3B38F006F1D66 /* CoreDataStack */,
 			);
@@ -269,19 +295,11 @@
 			path = NetworkService;
 			sourceTree = "<group>";
 		};
-		1574D45824F3BD9E006F1D66 /* JSONHelper */ = {
-			isa = PBXGroup;
-			children = (
-				1574D45924F3BDBE006F1D66 /* JSONHelper.swift */,
-			);
-			path = JSONHelper;
-			sourceTree = "<group>";
-		};
 		1574D45B24F3D956006F1D66 /* SubBreedModule */ = {
 			isa = PBXGroup;
 			children = (
-				1574D45D24F3D976006F1D66 /* Presenter */,
 				1574D45C24F3D96F006F1D66 /* View */,
+				15F1020724F5222900FAC9B5 /* SubBreedPresenter.swift */,
 			);
 			path = SubBreedModule;
 			sourceTree = "<group>";
@@ -295,19 +313,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		1574D45D24F3D976006F1D66 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				1574D45E24F3D98E006F1D66 /* SubBreedPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
 		1574D46424F3E48C006F1D66 /* Addition */ = {
 			isa = PBXGroup;
 			children = (
 				1574D46724F3E781006F1D66 /* SpinnerViewController.swift */,
 				1574D46824F3E781006F1D66 /* SpinnerViewController.xib */,
+				15F101F224F4F8E300FAC9B5 /* RootViewControllerAnimation.swift */,
+				15F1020B24F53B3E00FAC9B5 /* CheckInternetConnection.swift */,
 			);
 			path = Addition;
 			sourceTree = "<group>";
@@ -327,6 +339,51 @@
 				15D6AA4F24F466230042DFFA /* StartViewController.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		15F101F424F5067A00FAC9B5 /* ImageService */ = {
+			isa = PBXGroup;
+			children = (
+				15F101F524F5068B00FAC9B5 /* ImageService.swift */,
+			);
+			path = ImageService;
+			sourceTree = "<group>";
+		};
+		15F101F724F506D500FAC9B5 /* ImageModule */ = {
+			isa = PBXGroup;
+			children = (
+				15F1020224F5148800FAC9B5 /* Presenter */,
+				15F101FD24F50B2800FAC9B5 /* Cell */,
+				15F101F824F506FA00FAC9B5 /* View */,
+				15F1020924F5371700FAC9B5 /* ExImageViewControllerDataSource.swift */,
+			);
+			path = ImageModule;
+			sourceTree = "<group>";
+		};
+		15F101F824F506FA00FAC9B5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				15F101F924F5071000FAC9B5 /* ImageViewController.swift */,
+				15F101FA24F5071000FAC9B5 /* ImageViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		15F101FD24F50B2800FAC9B5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				15F101FE24F50B4300FAC9B5 /* ImageCollectionViewCell.swift */,
+				15F101FF24F50B4300FAC9B5 /* ImageCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		15F1020224F5148800FAC9B5 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				15F1020324F514A600FAC9B5 /* ImagePresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		BF01682722DD9D0FF73EAA4E /* Frameworks */ = {
@@ -436,10 +493,12 @@
 			files = (
 				1574D46A24F3E781006F1D66 /* SpinnerViewController.xib in Resources */,
 				15D6AA5124F466230042DFFA /* StartViewController.xib in Resources */,
+				15F101FC24F5071000FAC9B5 /* ImageViewController.xib in Resources */,
 				1574D46324F3D9DE006F1D66 /* SubBreedViewController.xib in Resources */,
 				1574D43F24F39BAA006F1D66 /* FavouritesViewController.xib in Resources */,
 				1574D41724F39650006F1D66 /* LaunchScreen.storyboard in Resources */,
 				1574D43B24F39B90006F1D66 /* MainViewController.xib in Resources */,
+				15F1020124F50B4300FAC9B5 /* ImageCollectionViewCell.xib in Resources */,
 				1574D41424F39650006F1D66 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -539,26 +598,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15F1020A24F5371700FAC9B5 /* ExImageViewControllerDataSource.swift in Sources */,
 				1574D45424F3B3A4006F1D66 /* CoreDataStack.swift in Sources */,
+				15F1020F24F5437B00FAC9B5 /* FavouritesDogs.xcdatamodeld in Sources */,
 				1574D42E24F397E8006F1D66 /* Module Builder.swift in Sources */,
+				15F1020424F514A600FAC9B5 /* ImagePresenter.swift in Sources */,
 				1574D41224F3964D006F1D66 /* Dogs_Wallet_.xcdatamodeld in Sources */,
 				1574D43124F39989006F1D66 /* Router.swift in Sources */,
 				1574D46924F3E781006F1D66 /* SpinnerViewController.swift in Sources */,
 				1574D44124F39C04006F1D66 /* MainPresenter.swift in Sources */,
+				15F101FB24F5071000FAC9B5 /* ImageViewController.swift in Sources */,
 				1574D44C24F3A32B006F1D66 /* DogsModel.swift in Sources */,
-				1574D45F24F3D98E006F1D66 /* SubBreedPresenter.swift in Sources */,
+				15F1021124F54F1100FAC9B5 /* DogForSaveModel.swift in Sources */,
 				15D6AA5024F466230042DFFA /* StartViewController.swift in Sources */,
+				15F101F324F4F8E300FAC9B5 /* RootViewControllerAnimation.swift in Sources */,
 				1574D43A24F39B90006F1D66 /* MainViewController.swift in Sources */,
+				15F1020824F5222900FAC9B5 /* SubBreedPresenter.swift in Sources */,
 				1574D44E24F3A7CE006F1D66 /* MainTableViewdataSource.swift in Sources */,
 				1574D40824F3964D006F1D66 /* AppDelegate.swift in Sources */,
 				1574D44624F39D20006F1D66 /* ViewProtocol.swift in Sources */,
 				1574D45724F3B8A7006F1D66 /* NetworkService.swift in Sources */,
 				1574D43E24F39BAA006F1D66 /* FavouritesViewController.swift in Sources */,
+				15F1020C24F53B3E00FAC9B5 /* CheckInternetConnection.swift in Sources */,
 				1574D45024F3A865006F1D66 /* MainTableViewCell.swift in Sources */,
 				1574D40A24F3964D006F1D66 /* SceneDelegate.swift in Sources */,
+				15F1020624F5184100FAC9B5 /* ImageURLsModel.swift in Sources */,
+				15F1020024F50B4300FAC9B5 /* ImageCollectionViewCell.swift in Sources */,
 				1574D44324F39C73006F1D66 /* FavouritesPresenter.swift in Sources */,
 				1574D44824F39D3D006F1D66 /* PresenterProtocol.swift in Sources */,
-				1574D45A24F3BDBE006F1D66 /* JSONHelper.swift in Sources */,
+				15F101F624F5068B00FAC9B5 /* ImageService.swift in Sources */,
 				1574D46224F3D9DE006F1D66 /* SubBreedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -831,6 +899,16 @@
 			);
 			currentVersion = 1574D41124F3964D006F1D66 /* Dogs_Wallet_.xcdatamodel */;
 			path = Dogs_Wallet_.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		15F1020D24F5437B00FAC9B5 /* FavouritesDogs.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				15F1020E24F5437B00FAC9B5 /* FavouritesDogs.xcdatamodel */,
+			);
+			currentVersion = 15F1020E24F5437B00FAC9B5 /* FavouritesDogs.xcdatamodel */;
+			path = FavouritesDogs.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

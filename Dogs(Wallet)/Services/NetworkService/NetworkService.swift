@@ -9,34 +9,24 @@
 import Foundation
 import Alamofire
 
-enum Request {
-    
-    case listAllBreeds
+enum RequestImage {
     case byBreed(breed: String)
     case bySubBreedImage(breed: String, subBreed: String)
-    case bySubBreadList(breed: String)
     
+    var path: String {
+        switch self {
+        case .byBreed(let breed):
+            return "https://dog.ceo/api/breed/\(breed)/images"
+        case .bySubBreedImage(let breed, let subBreed):
+            return "https://dog.ceo/api/breed/\(breed)/\(subBreed)/images"
+        }
+    }
 }
 
 class NetworkService {
     
-    private let backgroundQueue = DispatchQueue(label: "azizbek.ru/backgroundTask",
-                                                qos: .userInteractive, attributes: .concurrent)
-    func getDogsInfo(with request: Request, completion: @escaping (DogsModel?, Error?) -> Void) {
-        var urlString = ""
-        switch request {
-        case .listAllBreeds:
-            urlString =  "https://dog.ceo/api/breeds/list/all?start=0&limit=10"
-            
-        case .byBreed(let breed):
-            urlString =  "https://dog.ceo/api/breed/\(breed)/images"
-            
-        case .bySubBreadList(let breed):
-            urlString =  "https://dog.ceo/api/breed/\(breed)/list"
-            
-        case .bySubBreedImage(let breed, let subBreed):
-            urlString =  "https://dog.ceo/api/breed/\(breed)/\(subBreed)/images"
-        }
+    func getDogsInfo( completion: @escaping (DogsModel?, Error?) -> Void) {
+        let urlString = "https://dog.ceo/api/breeds/list/all"
         AF.request(urlString).responseJSON(queue: .global()) { (response) in
             if let error = response.error {
                 print(error.localizedDescription)
@@ -44,6 +34,26 @@ class NetworkService {
             if let data = response.data {
                 do {
                     let decodedData = try JSONDecoder().decode(DogsModel?.self, from: data)
+                    
+                    completion(decodedData, nil)
+                } catch {
+                    print("decode error")
+                    print(error.localizedDescription)
+                    completion(nil, error)
+                }
+            }
+        }
+    }
+    
+    func getArrayOfURLs(request: RequestImage, completion: @escaping (ImageURLsModel?, Error?) -> Void) {
+        
+        AF.request(request.path).responseJSON(queue: .global()) { (response) in
+            if let error = response.error {
+                print(error.localizedDescription)
+            }
+            if let data = response.data {
+                do {
+                    let decodedData = try JSONDecoder().decode(ImageURLsModel?.self, from: data)
                     
                     completion(decodedData, nil)
                 } catch {

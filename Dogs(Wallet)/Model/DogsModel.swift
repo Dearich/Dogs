@@ -26,8 +26,3 @@ struct DogsModel: Decodable {
         message = try container.decode(Dictionary.self, forKey: .message)
     }
 }
-
-struct DogsImagesURL: Codable {
-    let message: [String]
-    let status: String
-}

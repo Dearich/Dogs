@@ -9,7 +9,7 @@
 import UIKit
 
 class FavouritesViewController: UIViewController, ViewProtocol {
-    var dogsModel: DogsModel?
+    var dogsModel: [Dog]?
     let spinner = SpinnerViewController()
     
     weak var presenter: PresenterProtocol?

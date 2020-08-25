@@ -11,7 +11,7 @@ import UIKit
 
 protocol ViewProtocol: class {
     var presenter: PresenterProtocol? { get }
-    var dogsModel: DogsModel? { get set }
+    var dogsModel: [Dog]? { get set }
 }
 
 extension ViewProtocol {

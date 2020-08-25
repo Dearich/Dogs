@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImageViewController" customModule="Dogs_Wallet_" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="LVR-hm-67A" id="Qux-bt-f2H"/>
+                <outlet property="likeButton" destination="Jkg-2u-vno" id="idc-bG-2uB"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="LVR-hm-67A">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <collectionViewLayout key="collectionViewLayout" id="8mM-1h-CLp" customClass="CenteredCollectionViewFlowLayout" customModule="CenteredCollectionView"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="cXS-7T-126"/>
+                        <outlet property="delegate" destination="-1" id="AZ4-Lg-a0z"/>
+                    </connections>
+                </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jkg-2u-vno">
+                    <rect key="frame" x="320" y="773" width="64" height="59"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="59" id="dZU-Qv-UNf"/>
+                        <constraint firstAttribute="width" constant="64" id="nDx-NG-EmE"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                    <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" image="heart" catalog="system"/>
+                    <state key="selected" image="heart.fill" catalog="system"/>
+                    <connections>
+                        <action selector="likeButton:" destination="-1" eventType="touchUpInside" id="ylU-gk-2bY"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LVR-hm-67A" secondAttribute="trailing" id="3Rf-e0-Mba"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Jkg-2u-vno" secondAttribute="bottom" constant="30" id="KZF-cC-b3f"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Jkg-2u-vno" secondAttribute="trailing" constant="30" id="Weh-V2-aTE"/>
+                <constraint firstItem="LVR-hm-67A" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hyE-aw-lrO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="LVR-hm-67A" secondAttribute="bottom" id="nyU-SK-Q6k"/>
+                <constraint firstItem="LVR-hm-67A" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="xr7-ps-VkM"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="136.60714285714286"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
+    </resources>
+</document>

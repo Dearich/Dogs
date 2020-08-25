@@ -27,7 +27,14 @@ class ModuleBuilder: Builder {
         return view
     }
     
-    static func createSubBreedScreen() -> UIViewController {
+    static func createImageViewController() -> ImageViewController {
+        let view = ImageViewController()
+        let presenter = ImagePresenter(view: view)
+        view.presenter = presenter
+        return view
+    }
+    
+    static func createSubBreedViewController() -> SubBreedViewController {
         let view = SubBreedViewController()
         let presenter = SubBreedPresenter(view: view)
         view.presenter = presenter

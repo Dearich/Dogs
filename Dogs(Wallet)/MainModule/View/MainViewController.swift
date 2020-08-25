@@ -9,20 +9,14 @@
 import UIKit
 
 class MainViewController: UIViewController, ViewProtocol {
+    var dogsModel: [Dog]?
+    
     var presenter: PresenterProtocol?
-    let spinner = SpinnerViewController()
-    var dogsModel: DogsModel? {
-        didSet {
-            if let message = dogsModel?.message, !message.isEmpty {
-                self.tableView.reloadData()
-            }
-        }
-    }
 
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        dogsModel = DogsModel(message: [String:[String]]())
+        dogsModel = presenter?.getAllDogs()
         tableView.dataSource = self
         tableView.delegate = self
     }

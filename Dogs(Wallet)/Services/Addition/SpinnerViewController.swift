@@ -16,3 +16,22 @@ class SpinnerViewController: UIViewController {
         view.alpha = 0
     }
 }
+
+extension UIViewController {
+    func createSpinner() -> SpinnerViewController {
+        let spinner = SpinnerViewController()
+        
+        addChild(spinner)
+        spinner.view.center.x = view.center.x
+        spinner.view.center.y = view.center.y
+        view.addSubview(spinner.view)
+        spinner.didMove(toParent: self)
+        
+        return spinner
+    }
+    func removeSpinner(spinner: SpinnerViewController ) {
+        spinner.willMove(toParent: nil)
+        spinner.view.removeFromSuperview()
+        spinner.removeFromParent()
+    }
+}

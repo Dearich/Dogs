@@ -12,15 +12,20 @@ class MainPresenter:PresenterProtocol {
     
     weak var view: ViewProtocol?
     
-    var dogsModel: DogsModel? {
-        didSet {
-            guard let dogsModel = dogsModel else { return }
-                self.view?.dogsModel = dogsModel
-        }
-    }
-    
     required init(view: ViewProtocol) {
         self.view = view
-
+    }
+    
+    func getimageURls(breed: String, complition: @escaping ((ImageURLsModel) -> Void)) {
+        let networkService = NetworkService()
+        networkService.getArrayOfURLs(request: .byBreed(breed: breed)) { (urlArray, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else if let urlArray = urlArray {
+                DispatchQueue.main.async {
+                    complition(urlArray)
+                }
+            }
+        }
     }
 }

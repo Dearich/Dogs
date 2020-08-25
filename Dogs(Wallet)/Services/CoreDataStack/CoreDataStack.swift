@@ -13,7 +13,7 @@ class CoreDataStack {
     
     static let shared = CoreDataStack()
     
-    lazy var persistentContainer: NSPersistentContainer = {
+    lazy var allDogsPersistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "Dogs_Wallet_")
         container.loadPersistentStores(completionHandler: { (_, error) in
             if let error = error as NSError? {
@@ -26,7 +26,7 @@ class CoreDataStack {
     // MARK: - Core Data Saving support
     
     func saveContext () {
-        let context = persistentContainer.viewContext
+        let context = allDogsPersistentContainer.viewContext
         if context.hasChanges {
             do {
                 try context.save()
@@ -39,7 +39,7 @@ class CoreDataStack {
     }
     
     func saveAllDogs(lists:[String:[String]] ) {
-        let managedContext = persistentContainer.viewContext
+        let managedContext = allDogsPersistentContainer.viewContext
         for (index, value) in lists {
             let dog = Dog(context: managedContext)
             dog.breed = index
@@ -53,42 +53,20 @@ class CoreDataStack {
             }
             saveContext()
         }
+        
     }
     
-//    func fetchLists(complition: @escaping (_ lists: [CategoryList]) -> Void) {
-//        let managedContext = taskPersistentContainer.viewContext
-//        let fetchRequest = NSFetchRequest<CategoryList>(entityName: "CategoryList")
-//        do {
-//            let categorys = try managedContext.fetch(fetchRequest)
-//            complition(categorys)
-//        } catch let error {
-//            print(error.localizedDescription)
-//        }
-//    }
-    
-//    func fetchTasks(category: String? = nil, complition:@escaping (_ tasks: [Task]) -> Void) {
-//        let managedContext = taskPersistentContainer.viewContext
-//        let fetchRequest = NSFetchRequest<Task>(entityName: "Task")
-//        let sortDiscriptor = NSSortDescriptor(key: #keyPath(Task.date), ascending: false)
-//        let sortDiscriptor2 = NSSortDescriptor(key: #keyPath(Task.category), ascending: true)
-//        fetchRequest.sortDescriptors = [sortDiscriptor, sortDiscriptor2]
-//        do {
-//            let tasks = try managedContext.fetch(fetchRequest)
-//            if category == nil {
-//                complition(tasks)
-//
-//            } else {
-//                var taskFromSomeCategory = [Task]()
-//                for task in tasks where task.category?.name == category {
-//                    taskFromSomeCategory.append(task)
-//                }
-//                complition(taskFromSomeCategory)
-//            }
-//
-//        } catch let error {
-//            print(error.localizedDescription)
-//        }
-//    }
+    func fetchLists() -> [Dog] {
+        let managedContext = allDogsPersistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<Dog>(entityName: "Dog")
+        do {
+            let dogs = try managedContext.fetch(fetchRequest)
+            return dogs
+        } catch let error {
+            print(error.localizedDescription)
+        }
+        return [Dog]()
+    }
     
 //    func updateStatus(task: Task, value: Bool) {
 //        fetchTasks { (allTask) in
