@@ -33,7 +33,6 @@ class ImageViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         self.navigationItem.title = presenter.dogForSave?[0].name.capitalizingFirstLetter()
         self.navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(share)), animated: true)
         
@@ -41,10 +40,10 @@ class ImageViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         guard let dogForSave = presenter.dogForSave else { return }
-        for favouritesDog in dogForSave {
-            if favouritesDog.like {
+        for favouritesDog in dogForSave where favouritesDog.like {
+            
                 CoreDataStack.shared.saveFavouritesDogs(favouriteDog: favouritesDog)
-            }
+            
         }
     }
     

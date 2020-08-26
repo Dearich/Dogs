@@ -11,10 +11,10 @@ import UIKit
 
 protocol Builder {
     static func createMain() -> UIViewController
-    static func createFavouritesModule() -> UIViewController
+    static func createFavouritesModule() -> FavouritesViewController
 }
 class ModuleBuilder: Builder {
-    static func createFavouritesModule() -> UIViewController {
+    static func createFavouritesModule() -> FavouritesViewController {
         let view = FavouritesViewController()
         let presenter = FavouritesPresenter(view: view)
         view.presenter = presenter

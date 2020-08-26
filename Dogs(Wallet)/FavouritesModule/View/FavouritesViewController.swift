@@ -8,18 +8,19 @@
 
 import UIKit
 
-class FavouritesViewController: UIViewController, ViewProtocol {
+class FavouritesViewController: UIViewController {
     let reuseIdentifier = "Cell"
     
     @IBOutlet weak var tableView: UITableView!
     var dogsModel: [Dog]?
-    var favouriteDogs: [FavouritesDog]? {
+    var favouriteDogs: DogsModel.AllDogs? {
         didSet {
             tableView.reloadData()
         }
     }
+    var dogs: [DogsModel]?
     
-    weak var presenter: PresenterProtocol?
+    var presenter: FavouritesPresenter?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,13 +31,13 @@ class FavouritesViewController: UIViewController, ViewProtocol {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        favouriteDogs = CoreDataStack.shared.fetchFavouritesDog()
+        favouriteDogs = presenter?.getFavouritesDog()
     }
     
 }
 extension FavouritesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let count = favouriteDogs?.count else { return 0 }
+        guard let count = favouriteDogs?.count else { return 10 }
         return count
     }
     
@@ -44,14 +45,28 @@ extension FavouritesViewController: UITableViewDataSource, UITableViewDelegate {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier,
                                                  for: indexPath) as UITableViewCell
-        cell.textLabel?.text = favouriteDogs?[indexPath.row].name
+        guard let keys = favouriteDogs?.keys else { return cell }
+        let nameArray = Array(keys).sorted()
+        cell.textLabel?.text = nameArray[indexPath.row].capitalizingFirstLetter()
         cell.accessoryType = .disclosureIndicator
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        //TODO
+        guard let keys = favouriteDogs?.keys else { return }
+        let nameArray = Array(keys).sorted()
+        
+        guard let urlArray = favouriteDogs?[nameArray[indexPath.row]] else { return }
+        
+        let imageViewController = ModuleBuilder.createImageViewController()
+        
+        var dogForSave = [DogForSaveModel]()
+        for item in urlArray {
+            dogForSave.append(DogForSaveModel(name: nameArray[indexPath.row], urls: item, like: true))
+        }
+        imageViewController.presenter.dogForSave = dogForSave
+        navigationController?.pushViewController(imageViewController, animated: true)
         
         tableView.deselectRow(at: indexPath, animated: true)
     }

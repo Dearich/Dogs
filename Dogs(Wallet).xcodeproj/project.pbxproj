@@ -161,10 +161,8 @@
 				1574D43024F39989006F1D66 /* Router.swift */,
 				1574D44A24F3A301006F1D66 /* Model */,
 				15D6AA4C24F465ED0042DFFA /* StartingModule */,
-				1574D42F24F398B1006F1D66 /* MainModule */,
-				1574D45B24F3D956006F1D66 /* SubBreedModule */,
+				15867BD624F63D7600B89C6E /* List */,
 				1574D43224F39AC3006F1D66 /* FavouritesModule */,
-				15F101F724F506D500FAC9B5 /* ImageModule */,
 				1574D44424F39D0F006F1D66 /* Protocols */,
 				1574D45124F3B386006F1D66 /* Services */,
 				1574D42C24F3973D006F1D66 /* Supporting Files */,
@@ -322,6 +320,16 @@
 				15F1020B24F53B3E00FAC9B5 /* CheckInternetConnection.swift */,
 			);
 			path = Addition;
+			sourceTree = "<group>";
+		};
+		15867BD624F63D7600B89C6E /* List */ = {
+			isa = PBXGroup;
+			children = (
+				1574D42F24F398B1006F1D66 /* MainModule */,
+				1574D45B24F3D956006F1D66 /* SubBreedModule */,
+				15F101F724F506D500FAC9B5 /* ImageModule */,
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 		15D6AA4C24F465ED0042DFFA /* StartingModule */ = {
