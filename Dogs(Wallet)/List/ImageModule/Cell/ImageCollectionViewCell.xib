@@ -22,12 +22,18 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n12-i8-WbV">
                                 <rect key="frame" x="0.0" y="0.0" width="379" height="487"/>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="r4r-Fk-Zvp">
+                                <rect key="frame" x="171" y="225" width="37" height="37"/>
+                                <color key="color" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="n12-i8-WbV" firstAttribute="leading" secondItem="Mgm-Bp-AoH" secondAttribute="leading" id="4IF-eJ-x8D"/>
                             <constraint firstItem="n12-i8-WbV" firstAttribute="top" secondItem="Mgm-Bp-AoH" secondAttribute="top" id="HP7-Mw-fJa"/>
                             <constraint firstAttribute="trailing" secondItem="n12-i8-WbV" secondAttribute="trailing" id="IZ5-s5-2zc"/>
+                            <constraint firstItem="r4r-Fk-Zvp" firstAttribute="centerX" secondItem="Mgm-Bp-AoH" secondAttribute="centerX" id="M88-ua-i8K"/>
                             <constraint firstAttribute="bottom" secondItem="n12-i8-WbV" secondAttribute="bottom" id="m8I-pw-5L8"/>
+                            <constraint firstItem="r4r-Fk-Zvp" firstAttribute="centerY" secondItem="Mgm-Bp-AoH" secondAttribute="centerY" id="yn5-KV-63L"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -42,6 +48,7 @@
             <size key="customSize" width="379" height="487"/>
             <connections>
                 <outlet property="imageView" destination="n12-i8-WbV" id="CH8-cp-WYn"/>
+                <outlet property="spinner" destination="r4r-Fk-Zvp" id="tCp-p9-Lh6"/>
             </connections>
             <point key="canvasLocation" x="281.8840579710145" y="181.13839285714286"/>
         </collectionViewCell>

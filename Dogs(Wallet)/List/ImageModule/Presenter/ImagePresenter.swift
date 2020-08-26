@@ -45,33 +45,30 @@ class ImagePresenter {
         view?.present(alert,animated: true)
     }
     
-    func getImage(spiner: SpinnerViewController, url: URL, cellImage: UIImageView) {
-        spiner.loadView()
-        spiner.activityIndicator.startAnimating()
+    func getImage( url: URL, cellImage: UIImageView) {
         if CheckInternetConnection.connection() {
             ImageService.getImageFromCashe(withURL: url) { (image) in
                 if image == nil {
                     DispatchQueue.main.async { [weak self] in
-                        self?.setAlert(spiner: spiner, url: url, cellImage: cellImage)
+                        self?.setAlert(title:"Some server error" , message: "Try connect later", url: url, cellImage: cellImage )
                     }
                 }
                 DispatchQueue.main.async { [weak self] in
                     cellImage.image = image
                     guard let image = image else { return }
                     self?.imageToShare = image
-                    self?.view?.removeSpinner(spinner: spiner)
                 }
             }
         } else {
-            setAlert(spiner: spiner, url: url, cellImage: cellImage)
+            setAlert(title: "Lost connection", message: "Check your internet connection", url: url, cellImage: cellImage)
         }
     }
 
-    func setAlert(spiner: SpinnerViewController, url: URL, cellImage: UIImageView) {
+    func setAlert(title:String, message: String, url: URL, cellImage: UIImageView) {
         
-        let alert = UIAlertController(title: "Some server error", message: "Try connect later", preferredStyle: .alert)
+        let alert = UIAlertController(title: title, message: message , preferredStyle: .alert)
         let action = UIAlertAction(title: "Ok", style: .default) { (_) in
-            self.getImage(spiner: spiner, url: url, cellImage: cellImage)
+            self.getImage( url: url, cellImage: cellImage)
         }
         alert.addAction(action)
         view?.present(alert, animated: true)

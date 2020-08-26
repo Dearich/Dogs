@@ -22,7 +22,7 @@ extension ImageViewController: UICollectionViewDataSource, UICollectionViewDeleg
         
         guard let urlImageString  = presenter.dogForSave?[indexPath.row].urls else { return cell }
         guard let url = URL(string: urlImageString) else { return cell }
-        presenter.getImage(spiner: spiner, url: url, cellImage: cell.imageView)
+        presenter.getImage( url: url, cellImage: cell.imageView)
         
         return cell
     }

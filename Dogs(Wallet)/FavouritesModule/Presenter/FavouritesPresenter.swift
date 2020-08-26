@@ -23,12 +23,11 @@ class FavouritesPresenter {
         for dog in favouriteDogs {
             guard let name = dog.name else { continue }
             dogs["\(name)"] = urlArray
-            print(dogs)
         }
+        
         for dog in favouriteDogs {
             guard let name = dog.name, let url = dog.url else { continue }
             dogs["\(name)"]?.append(url)
-            print(dogs)
         }
         
         return dogs

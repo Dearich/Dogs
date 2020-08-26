@@ -105,31 +105,18 @@ class CoreDataStack {
         }
         return [FavouritesDog]()
     }
-    
-//    func updateStatus(task: Task, value: Bool) {
-//        fetchTasks { (allTask) in
-//            for oneTask in allTask where oneTask === task {
-//                oneTask.setValue(value, forKey: "done")
-//
-//                do {
-//                    try oneTask.managedObjectContext?.save()
-//                    print("Удачное изменение")
-//                } catch  let error {
-//                    print(error.localizedDescription)
-//                }
-//
-//            }
-//        }
-//    }
-//    func deleteTask(task: Task) {
-//        let managedContext = taskPersistentContainer.viewContext
-//        managedContext.delete(task)
-//
-//        do {
-//            try managedContext.save()
-//            print("Удачное удаление")
-//        } catch let error {
-//            print(error.localizedDescription)
-//        }
-//    }
+
+    func delete(dog: DogForSaveModel) {
+        let savedDogs = fetchFavouritesDog()
+        let managedContext = favouritesDogsPersistentContainer.viewContext
+        for savedDog in savedDogs where savedDog.url == dog.urls {
+            managedContext.delete(savedDog)
+        }
+        do {
+            try managedContext.save()
+            print("Удачное удаление")
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
 }

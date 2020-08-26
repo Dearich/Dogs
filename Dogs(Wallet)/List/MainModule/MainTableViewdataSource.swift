@@ -53,6 +53,7 @@ extension MainViewController:  UITableViewDelegate, UITableViewDataSource {
                 for item in urlArray.message {
                     dogForSave.append(DogForSaveModel(name: breed, urls: item, like: false))
                 }
+                
                 imageViewController.presenter.dogForSave = dogForSave
                 self?.navigationController?.pushViewController(imageViewController, animated: true)
                 
