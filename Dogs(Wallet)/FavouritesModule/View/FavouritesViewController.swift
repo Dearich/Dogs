@@ -47,7 +47,13 @@ extension FavouritesViewController: UITableViewDataSource, UITableViewDelegate {
                                                  for: indexPath) as UITableViewCell
         guard let keys = favouriteDogs?.keys else { return cell }
         let nameArray = Array(keys).sorted()
-        cell.textLabel?.text = nameArray[indexPath.row].capitalizingFirstLetter()
+        guard let photoCount = favouriteDogs?[nameArray[indexPath.row]]?.count else { return cell }
+        if photoCount == 1 {
+            cell.textLabel?.text = "\(nameArray[indexPath.row].capitalizingFirstLetter()) (\(photoCount) photo)"
+        } else {
+            cell.textLabel?.text = "\(nameArray[indexPath.row].capitalizingFirstLetter()) (\(photoCount) photos)"
+        }
+        
         cell.accessoryType = .disclosureIndicator
         return cell
     }
