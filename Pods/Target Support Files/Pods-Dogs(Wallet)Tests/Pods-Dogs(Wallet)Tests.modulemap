@@ -1,0 +1,6 @@
+framework module Pods_Dogs_Wallet_Tests {
+  umbrella header "Pods-Dogs(Wallet)Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
