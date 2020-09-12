@@ -1,0 +1,20 @@
+PODS:
+  - Alamofire (5.2.1)
+  - CenteredCollectionView (2.2.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.2)
+  - CenteredCollectionView
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - CenteredCollectionView
+
+SPEC CHECKSUMS:
+  Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
+  CenteredCollectionView: a9217908a698c386cbb98af11b596da48900b908
+
+PODFILE CHECKSUM: 6d840059ae293cd255d3579850096e36ccabcb04
+
+COCOAPODS: 1.9.3
